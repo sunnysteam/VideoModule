@@ -1,63 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
-   >
-
-    <com.robot.tuling.videomodule.UIControl.WeatherUIControl
-        android:id="@+id/weather_ui_control"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        />
+    tools:context="com.robot.tuling.app.MainActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5">
-        <TextView
+        android:layout_weight="1.5">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="14:23"
+                android:textColor="#ffffff"
+                android:textSize="48sp"/>
+
+            <TextView
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="7月14日 星期五"
+
+                android:textColor="#ffffff"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <com.robot.tuling.videomodule.UIControl.WeatherUIControl
+            android:id="@+id/weather_control"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="主项目app"
+            android:layout_gravity="bottom"
             />
 
-        <Button
-            android:id="@+id/video"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="拍视频"/>
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:src="@drawable/weather_0"-->
+        <!--/>-->
 
-        <Button
-            android:id="@+id/music"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="听音乐"/>
+        <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginLeft="30dp"-->
+        <!--android:gravity="bottom"-->
+        <!--android:orientation="vertical">-->
 
-        <Button
-            android:id="@+id/photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="拍照"/>
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:text="19°"-->
+        <!--android:textColor="#ffffff"-->
+        <!--android:textSize="48sp"-->
+        <!--/>-->
 
-        <Button
-            android:id="@+id/record_video"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="视频"/>
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:text="深圳  晴"-->
+        <!--android:textColor="#ffffff"-->
+        <!--android:textSize="16sp"-->
+        <!--/>-->
+        <!--</LinearLayout>-->
 
-        <Button
-            android:id="@+id/movie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="看电影"/>
+    </LinearLayout>
 
-        <Button
-            android:id="@+id/education"
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/page_one"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="幼儿教育"/>
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_marginTop="-50dp"
+            android:text="."
+            android:textColor="#ffffff"
+            android:textSize="64sp"/>
+
+
+        <TextView
+            android:id="@+id/page_two"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_marginTop="-50dp"
+            android:text="."
+            android:textColor="#a4a4a4"
+            android:textSize="64sp"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -12,10 +12,10 @@
         />
 
     <LinearLayout
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
         android:orientation="vertical">
 
         <Space
@@ -37,14 +37,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="26"
-                android:textSize="48px"/>
+                android:textColor="#ffffff"
+                android:textSize="48sp"/>
 
             <TextView
                 android:id="@+id/tv_degree_format"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="°"
-                android:textSize="48px"/>
+                android:textColor="#ffffff"
+                android:textSize="48sp"/>
 
             <Space
                 android:layout_width="0dp"
@@ -60,7 +62,9 @@
                 android:id="@+id/tv_city_name"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="深圳"/>
+                android:text="深圳"
+                android:textColor="#ffffff"
+                android:textSize="16sp"/>
 
             <Space
                 android:layout_width="5dp"
@@ -71,7 +75,9 @@
                 android:id="@+id/tv_weather_text"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="晴"/>
+                android:text="晴"
+                android:textColor="#ffffff"
+                android:textSize="16sp"/>
         </LinearLayout>
 
         <Space

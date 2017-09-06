@@ -1,0 +1,126 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginBottom="10dp"
+              android:layout_marginLeft="30dp"
+              android:layout_marginRight="30dp"
+              android:layout_marginTop="10dp"
+              android:orientation="vertical"
+              tools:context="com.robot.tuling.app.Fragment_two">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+        <TextView
+            android:id="@+id/music_btn"
+            style="@style/mainView_Button"
+            android:drawableTop="@drawable/music"
+            android:text="听音乐"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+            android:id="@+id/movie_btn"
+            style="@style/mainView_Button"
+            android:drawableTop="@drawable/movie"
+            android:text="看电影"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+        <TextView
+            android:id="@+id/record_btn"
+            style="@style/mainView_Button"
+            android:drawableTop="@drawable/record"
+            android:text="录音"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+        <TextView
+            android:id="@+id/reminder_btn"
+            style="@style/mainView_Button"
+            android:drawableTop="@drawable/reminder"
+            android:text="智能提醒"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+        <TextView
+            android:id="@+id/wiki_btn"
+            style="@style/mainView_Button"
+            android:drawableTop="@drawable/wiki"
+            android:text="百科问答"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+            android:id="@+id/children_educute_btn"
+            style="@style/mainView_Button"
+            android:drawableTop="@drawable/children_educute"
+            android:text="幼儿教育"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+            style="@style/mainView_Button"
+            android:drawableTop="@drawable/photo"
+            android:visibility="invisible"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+            style="@style/mainView_Button"
+            android:drawableTop="@drawable/vedio"
+            android:visibility="invisible"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

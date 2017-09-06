@@ -47,9 +47,6 @@
 
         <service android:name=".Service.PlayService">
         </service>
-
-        <activity android:name=".View.PhotosActivity">
-        </activity>
         <activity android:name=".View.PhotoAlbumActivity">
         </activity>
         <activity android:name=".View.VideoAlbumActivity">

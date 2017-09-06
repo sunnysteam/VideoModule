@@ -68,6 +68,9 @@ public class WeatherUIControl extends LinearLayout {
     }
 
     public void setCity(String city) {
+        if(TextUtils.isEmpty(city)){
+            return;
+        }
         if (TextUtils.isEmpty(lastCityName) || !lastCityName.equals(city)) {
             String[] temp = city.split("市");
             temp = temp[0].split("特");
