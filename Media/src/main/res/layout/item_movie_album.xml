@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movieAlbumItemViewModel"
+            type="com.robot.tuling.videomodule.ViewModel.MovieAlbumItemViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="50dp">
+
+        <ImageView
+            android:id="@+id/thunbnail_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:onClick="@{movieAlbumItemViewModel.onClickCommand}"
+            android:scaleType="centerCrop"
+            app:movieSrc="@{movieAlbumItemViewModel.thumbnailUrl}"
+            app:thumbnailClick="@{movieAlbumItemViewModel.isClicked}"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="#a0000000"
+            android:paddingLeft="10dp"
+            android:text="@{movieAlbumItemViewModel.fileName}"
+            android:textSize="36px"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#aa000000"
+            android:paddingRight="10dp"
+            android:text="@{movieAlbumItemViewModel.duration}"
+            android:textAlignment="textEnd"
+            android:textSize="36px"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{movieAlbumItemViewModel.isControlVisible}"
+            >
+
+            <ImageView
+                android:id="@+id/play_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{movieAlbumItemViewModel.onClickCommand}"
+                android:src="@drawable/play_surface"/>
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/delete_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{movieAlbumItemViewModel.onClickCommand}"
+                android:src="@drawable/delete_surface"/>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

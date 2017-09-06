@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="photoAlbumViewModel"
+            type="com.robot.tuling.videomodule.ViewModel.PhotoAlbumViewModel"/>
+
+        <import type="me.tatarka.bindingcollectionadapter.LayoutManagers"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{photoAlbumViewModel.isRecycleViewVisible}"
+            app:itemView="@{photoAlbumViewModel.itemView}"
+            app:items="@{photoAlbumViewModel.photoAlbumItemViewModels}"
+            app:layoutManager="@{LayoutManagers.staggeredGrid(4,1)}"
+            />
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="@{photoAlbumViewModel.isImageViewVisible}"
+            app:currentItem="@{photoAlbumViewModel.position}"
+            app:imageItems="@{photoAlbumViewModel.photoAlbumItemViewModels}"
+            />
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="@{photoAlbumViewModel.onClickCommand}"
+            android:src="@drawable/close_surface"
+            android:visibility="@{photoAlbumViewModel.isImageViewVisible}"/>
+
+        <ImageView
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/btn_close"
+            android:onClick="@{photoAlbumViewModel.onClickCommand}"
+            android:src="@drawable/delete_surface"
+            android:visibility="@{photoAlbumViewModel.isImageViewVisible}"/>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/weather_99"
+        />
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_degree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="26"
+                android:textSize="48px"/>
+
+            <TextView
+                android:id="@+id/tv_degree_format"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="°"
+                android:textSize="48px"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="深圳"/>
+
+            <Space
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_weather_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="晴"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>

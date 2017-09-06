@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <com.robot.tuling.videomodule.UIControl.WeatherUIControl
+        android:id="@+id/weather_ui_control"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主项目app"
+            />
+
+        <Button
+            android:id="@+id/video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拍视频"/>
+
+        <Button
+            android:id="@+id/music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="听音乐"/>
+
+        <Button
+            android:id="@+id/photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拍照"/>
+
+        <Button
+            android:id="@+id/record_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视频"/>
+
+        <Button
+            android:id="@+id/movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="看电影"/>
+
+        <Button
+            android:id="@+id/education"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="幼儿教育"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="mediaViewModel"
+            type="com.robot.tuling.videomodule.ViewModel.MediaViewModel"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{mediaViewModel.clickCommand}"
+                    android:text="拍照"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{mediaViewModel.clickCommand}"
+                    android:text="拍视频"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="@{mediaViewModel.isVideoVisible}">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"/>
+
+                <FrameLayout
+                    android:id="@+id/videoContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <VideoView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:path="@{mediaViewModel.video.video}"
+                        android:visibility="@{mediaViewModel.isVideoVisible}"
+                        />
+                </FrameLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"/>
+            </LinearLayout>
+
+            <!--<VideoView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--app:path="@{mediaViewModel.video.video}"-->
+                <!--android:visibility="@{mediaViewModel.isVideoVisible}"-->
+                <!--/>-->
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@{mediaViewModel.video.image}"
+                android:visibility="@{mediaViewModel.isImageVisible}"/>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</layout>

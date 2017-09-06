@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:lrc="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="musicViewModel"
+            type="com.robot.tuling.videomodule.ViewModel.MusicViewModel"/>
+
+        <import type="me.tatarka.bindingcollectionadapter.LayoutManagers"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            app:itemView="@{musicViewModel.itemView}"
+            app:items="@{musicViewModel.musicItemViewModels}"
+            app:position="@{musicViewModel.position}"
+            app:layoutManager="@{LayoutManagers.linear()}"
+            />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@{musicViewModel.callbackMusicModel.music_album_cover_path}"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#aa000000"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:text="@{musicViewModel.callbackMusicModel.musicTitle}"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="48px"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.6"
+                    >
+
+                    <com.robot.tuling.videomodule.UIControl.MusicUIControl
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        app:coverpath="@{musicViewModel.callbackMusicModel.music_album_cover_path}"
+                        app:isPlaying="@{musicViewModel.playingState}"/>
+
+
+                    <com.robot.tuling.videomodule.UIControl.Lrc.LrcUIControl
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:lrcpath="@{musicViewModel.callbackMusicModel.music_lrc_path}"
+                        app:progress="@{musicViewModel.playProgress}"
+                        lrc:lrcAnimationDuration="1000"
+                        lrc:lrcDividerHeight="24dp"
+                        lrc:lrcTextSize="@dimen/text_size_common"/>
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.1"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin">
+
+                        <TextView
+                            android:id="@+id/tv_current_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{musicViewModel.currentTime}"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"/>
+
+                        <SeekBar
+                            android:id="@+id/sb_progress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxHeight="2dp"
+                            android:minHeight="2dp"
+                            android:max="@{musicViewModel.seekMax}"
+                            android:progress="@{musicViewModel.seekProgress}"
+                            android:progressDrawable="@drawable/seek_bar_progress_style"
+                            android:thumb="@drawable/ic_seek_bar_progress_btn"
+                            app:isPlaying="@{musicViewModel.playingState}"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_total_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{musicViewModel.totalTime}"
+                            android:textColor="@color/white_50p"
+                            android:textSize="10sp"/>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:id="@+id/iv_prev"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/iv_play"
+                            android:onClick="@{musicViewModel.onClickCommand}"
+                            android:src="@drawable/play_btn_prev_selector"/>
+
+                        <ImageView
+                            android:id="@+id/iv_play"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:onClick="@{musicViewModel.onClickCommand}"
+                            android:src="@drawable/play_btn_play_pause_selector"
+                            app:isPlaying="@{musicViewModel.playingState}"/>
+
+                        <ImageView
+                            android:id="@+id/iv_next"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/iv_play"
+                            android:onClick="@{musicViewModel.onClickCommand}"
+                            android:src="@drawable/play_btn_next_selector"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

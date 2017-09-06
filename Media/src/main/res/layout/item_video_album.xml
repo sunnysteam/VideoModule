@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="videoAlbumItemViewModel"
+            type="com.robot.tuling.videomodule.ViewModel.VideoAlbumItemViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/thunbnail_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:onClick="@{videoAlbumItemViewModel.onClickCommand}"
+            android:scaleType="centerCrop"
+            app:videoSrc="@{videoAlbumItemViewModel.thumbnailUrl}"
+            app:thumbnailClick="@{videoAlbumItemViewModel.isClicked}"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{videoAlbumItemViewModel.isControlVisible}"
+            >
+
+            <ImageView
+                android:id="@+id/play_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{videoAlbumItemViewModel.onClickCommand}"
+                android:src="@drawable/play_surface"/>
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/delete_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{videoAlbumItemViewModel.onClickCommand}"
+                android:src="@drawable/delete_surface"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

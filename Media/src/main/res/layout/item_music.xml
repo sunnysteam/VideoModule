@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="musicitemviewmodel"
+            type="com.robot.tuling.videomodule.ViewModel.MusicItemViewModel"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@{musicitemviewmodel.backColor}"
+                    android:onClick="@{musicitemviewmodel.onClickCommand}"
+                    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="@{musicitemviewmodel.musicModel.musicTitle}"
+                android:textColor="@{musicitemviewmodel.textColor}"
+                android:textSize="32px"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{musicitemviewmodel.musicModel.music_artist}"
+                    android:textColor="#a4a4a4"
+                    android:textSize="24px"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text=" - "
+                    android:textColor="#a4a4a4"
+                    android:textSize="24px"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{musicitemviewmodel.musicModel.music_album}"
+                    android:textColor="#a4a4a4"
+                    android:textSize="24px"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="cameraViewModel"
+            type="com.robot.tuling.videomodule.ViewModel.CameraViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <SurfaceView
+            android:id="@+id/surfacecameraview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:visibility="@{cameraViewModel.isTakeVisible}"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            android:src="@{cameraViewModel.image}"
+            android:visibility="@{cameraViewModel.isSaveVisible}"/>
+
+        <ImageView
+            android:id="@+id/img_takePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:onClick="@{cameraViewModel.takePhotoCommand}"
+            android:src="@drawable/snap"
+            android:tag="拍照"
+            android:visibility="@{cameraViewModel.isTakeVisible}"/>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/img_takePhoto"
+            android:layout_toRightOf="@+id/img_takePhoto"
+            android:onClick="@{cameraViewModel.takePhotoCommand}"
+            android:text="保存"
+            android:visibility="@{cameraViewModel.isSaveVisible}"/>
+
+        <ImageView
+            android:id="@+id/img_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/img_takePhoto"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/img_takePhoto"
+            android:onClick="@{cameraViewModel.takePhotoCommand}"
+            android:src="@drawable/snap_back"
+            android:tag="@{cameraViewModel.photoAction}"
+            />
+
+        <com.robot.tuling.videomodule.UIControl.CircleImageView
+            android:id="@+id/imageCircleView"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{cameraViewModel.takePhotoCommand}"
+            app:circleImage="@{cameraViewModel.circleImage}"
+            app:civ_border_color="#ffffff"
+            app:civ_border_width="2dp"
+            />
+    </RelativeLayout>
+</layout>
